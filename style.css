@@ -283,26 +283,28 @@ ul{ list-style:none; }
 .royal-frame{
   position:relative;
 
-  width:min(360px,70vw);
+  width:min(420px,78vw);
   aspect-ratio:3/4;
 
-  padding:18px;
+  padding:24px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #7a4d21,
-      #a56b2f,
-      #6a3f18
-    );
+  background:linear-gradient(
+    180deg,
+    #f7d9f0 0%,
+    #d8b5ff 45%,
+    #c89fff 100%
+  );
 
-  border:6px solid #d7b16f;
+  border:8px solid #ffe9f8;
 
-  border-radius:40px 40px 80px 80px;
+  border-radius:
+    120px 120px
+    70px 70px;
 
   box-shadow:
-    0 0 0 4px #5c3515,
-    0 20px 60px rgba(0,0,0,.45);
+    0 0 0 5px #f3d6ff,
+    0 15px 50px rgba(214,145,255,.45),
+    0 0 40px rgba(255,255,255,.4);
 
   overflow:hidden;
 }
@@ -311,34 +313,71 @@ ul{ list-style:none; }
   height:100%;
   object-fit:cover;
 
-  border-radius:28px 28px 70px 70px;
+  border-radius:
+    100px 100px
+    50px 50px;
 
-  border:4px solid rgba(255,255,255,.2);
+  border:5px solid rgba(255,255,255,.7);
 }
 .royal-frame::before{
+  content:"";
+
+  position:absolute;
+
+  width:70px;
+  height:70px;
+
+  top:-18px;
+  left:50%;
+
+  transform:
+    translateX(-50%)
+    rotate(45deg);
+
+  background:linear-gradient(
+    135deg,
+    #f2d7ff,
+    #b46dff
+  );
+
+  border:6px solid #ffe6ff;
+
+  border-radius:12px;
+
+  z-index:5;
+
+  box-shadow:
+    0 0 30px rgba(194,111,255,.8);
+}
+.royal-frame::after{
   content:"👑";
 
   position:absolute;
 
-  top:-20px;
+  top:-70px;
   left:50%;
 
   transform:translateX(-50%);
 
-  font-size:42px;
+  font-size:58px;
 
-  filter:drop-shadow(0 0 10px gold);
+  filter:
+    drop-shadow(0 0 15px rgba(255,223,119,.9));
 
-  z-index:5;
+  z-index:6;
 }
 .royal-frame.small{ width: min(260px, 60vw); }
 
 .frame-ribbon{
   display:block; text-align:center; margin: 1.2rem auto 0; max-width: 260px;
   font-family: var(--font-script); font-size:1.4rem; color: var(--gold-soft);
-  background: linear-gradient(135deg, var(--purple-royal), var(--purple-dark));
-  border: 1px solid var(--gold-soft); border-radius: 999px;
-  padding: 0.5rem 1.5rem;
+  background:linear-gradient(
+  135deg,
+  #c89fff,
+  #e6b8ff
+);
+  border: 2px solid #ffe9f8;
+  padding: 0 8px 20px rgba(200,159,255,.35);
 }
 
 /* ============ HOME / HERO ============ */
