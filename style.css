@@ -163,7 +163,7 @@ ul{ list-style:none; }
 }
 
 /* ============ Flying birds ============ */
-.bird-layer{ position: fixed; inset:0; pointer-events:none; z-index: 5; overflow:hidden; }
+.bird-layer{ position: fixed; inset:0; pointer-events:none; z-index: 5; overflow:visible; }
 .bird{
   position:absolute;
   font-size: 1.6rem;
@@ -612,4 +612,75 @@ body::before{
 }
 .royal-frame:hover .magic-orbit{
   animation-duration:4s;
+}
+@keyframes orbitRotate{
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform:rotate(360deg);
+  }
+}
+.royal-frame{
+  position:relative;
+}
+
+.royal-frame::selection{
+  display:none;
+}
+
+.royal-frame .sparkle{
+  position:absolute;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+
+  background:white;
+
+  box-shadow:
+    0 0 8px white,
+    0 0 15px #d6afff,
+    0 0 25px #d6afff;
+
+  animation: fairyFloat 4s ease-in-out infinite;
+}
+
+.sparkle.s1{
+  left:10%;
+  bottom:20%;
+  animation-delay:0s;
+}
+
+.sparkle.s2{
+  left:85%;
+  bottom:40%;
+  animation-delay:1s;
+}
+
+.sparkle.s3{
+  left:50%;
+  bottom:10%;
+  animation-delay:2s;
+}
+
+.sparkle.s4{
+  left:25%;
+  bottom:60%;
+  animation-delay:3s;
+}
+
+@keyframes fairyFloat{
+  0%{
+    transform:translateY(0) scale(0.5);
+    opacity:0;
+  }
+
+  50%{
+    opacity:1;
+  }
+
+  100%{
+    transform:translateY(-40px) scale(1);
+    opacity:0;
+  }
 }
