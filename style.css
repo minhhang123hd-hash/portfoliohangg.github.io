@@ -29,7 +29,19 @@ html{ scroll-behavior:smooth; }
 
 body{
   font-family: var(--font-body);
-  background: linear-gradient(180deg, var(--purple-deepest), var(--purple-dark) 40%, var(--purple-royal));
+
+  background:
+    linear-gradient(
+      rgba(44,21,71,0.72),
+      rgba(44,21,71,0.72)
+    ),
+    url("assets/images/castle-bg.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
   color: var(--cream);
   overflow-x: hidden;
   min-height: 100vh;
@@ -269,18 +281,56 @@ ul{ list-style:none; }
 
 /* ============ Royal photo frame ============ */
 .royal-frame{
-  position: relative;
-  border-radius: 50% / 45%;
-  padding: 14px;
-  background: linear-gradient(135deg, var(--purple-royal), var(--purple-mid), var(--rose));
-  border: 3px solid var(--gold);
-  box-shadow: 0 20px 50px var(--shadow-purple), inset 0 0 0 6px rgba(253,246,236,0.08);
-  width: min(340px, 70vw);
-  aspect-ratio: 3/4;
-  overflow: hidden;
-  margin: 0 auto;
+  position:relative;
+
+  width:min(360px,70vw);
+  aspect-ratio:3/4;
+
+  padding:18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7a4d21,
+      #a56b2f,
+      #6a3f18
+    );
+
+  border:6px solid #d7b16f;
+
+  border-radius:40px 40px 80px 80px;
+
+  box-shadow:
+    0 0 0 4px #5c3515,
+    0 20px 60px rgba(0,0,0,.45);
+
+  overflow:hidden;
 }
-.royal-frame img{ width:100%; height:100%; object-fit:cover; border-radius: 50% / 45%; }
+.royal-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+
+  border-radius:28px 28px 70px 70px;
+
+  border:4px solid rgba(255,255,255,.2);
+}
+.royal-frame::before{
+  content:"👑";
+
+  position:absolute;
+
+  top:-20px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  font-size:42px;
+
+  filter:drop-shadow(0 0 10px gold);
+
+  z-index:5;
+}
 .royal-frame.small{ width: min(260px, 60vw); }
 
 .frame-ribbon{
@@ -297,7 +347,7 @@ ul{ list-style:none; }
   padding-top: 6rem; overflow:hidden;
 }
 .castle-bg{
-  position:absolute; inset:0;
+ display:none;
   background-size: cover; background-position: center;
   background-color: var(--purple-dark);
   filter: saturate(1.1);
@@ -431,4 +481,32 @@ ul{ list-style:none; }
   .music-info{ display:none; }
   .music-bars{ display:none; }
   .music-box{ padding: 0.5rem; }
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 1px),
+    radial-gradient(circle, rgba(232,200,116,.8) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255,255,255,.8) 2px, transparent 2px);
+
+  background-size:
+    180px 180px,
+    260px 260px,
+    320px 320px;
+
+  animation: sparkleMove 25s linear infinite;
+}
+
+@keyframes sparkleMove{
+  from{
+    transform:translateY(0);
+  }
+  to{
+    transform:translateY(-200px);
+  }
 }
