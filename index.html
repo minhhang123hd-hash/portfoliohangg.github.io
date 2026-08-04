@@ -19,24 +19,49 @@
 <!-- FAIRY-TALE STORYBOOK INTRO    -->
 <!-- ============================= -->
 <div id="book-intro" class="book-intro">
-  <div class="intro-stars"></div>
+
+  <!-- VIDEO BACKGROUND -->
+  <video class="intro-video" autoplay muted loop playsinline>
+    <source src="assets/videos/intro-castle.mp4" type="video/mp4">
+  </video>
+
+  <div class="intro-overlay"></div>
+
   <div class="book" id="storybook">
     <div class="book-cover">
       <div class="cover-frame">
         <p class="cover-eyebrow">Once upon a time...</p>
-        <h1 class="cover-title">The Kingdom of <br>Doan Thi Minh Hang</h1>
+
+        <h1 class="cover-title">
+          The Kingdom of <br>
+          Doan Thi Minh Hang
+        </h1>
+
         <div class="cover-crest">✦</div>
-        <p class="cover-hint">Tap to open the storybook</p>
+
+        <p class="cover-hint">
+          Tap to open the storybook
+        </p>
       </div>
     </div>
+
     <div class="book-page page-left">
-      <p class="page-script">In a land of quiet colors and gentle courage,</p>
+      <p class="page-script">
+        In a land of quiet colors and gentle courage,
+      </p>
     </div>
+
     <div class="book-page page-right">
-      <p class="page-script">a storyteller began to write her own tale...</p>
+      <p class="page-script">
+        a storyteller began to write her own tale...
+      </p>
     </div>
   </div>
-  <button id="skip-intro" class="skip-intro" aria-label="Skip introduction">Skip ✦</button>
+
+  <button id="skip-intro" class="skip-intro">
+    Skip ✦
+  </button>
+
 </div>
 
 <!-- Fairy dust cursor canvas -->
