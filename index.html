@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Kingdom of Minh Hằng | Portfolio</title>
+<meta name="description" content="Đoàn Thị Minh Hằng — Communications & Content Creator Portfolio">
+
+<!-- Fonts: fairy-tale display + soft readable body -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Marcellus&family=Parisienne&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================= -->
+<!-- FAIRY-TALE STORYBOOK INTRO    -->
+<!-- ============================= -->
+<div id="book-intro" class="book-intro">
+  <div class="intro-stars"></div>
+  <div class="book" id="storybook">
+    <div class="book-cover">
+      <div class="cover-frame">
+        <p class="cover-eyebrow">Once upon a time...</p>
+        <h1 class="cover-title">The Kingdom<br>of Minh Hằng</h1>
+        <div class="cover-crest">✦</div>
+        <p class="cover-hint">Tap to open the storybook</p>
+      </div>
+    </div>
+    <div class="book-page page-left">
+      <p class="page-script">In a land of quiet colors and gentle courage,</p>
+    </div>
+    <div class="book-page page-right">
+      <p class="page-script">a storyteller began to write her own tale...</p>
+    </div>
+  </div>
+  <button id="skip-intro" class="skip-intro" aria-label="Skip introduction">Skip ✦</button>
+</div>
+
+<!-- Fairy dust cursor canvas -->
+<canvas id="fairy-dust"></canvas>
+
+<!-- Flying birds -->
+<div class="bird-layer" aria-hidden="true">
+  <span class="bird bird-1">𓅭</span>
+  <span class="bird bird-2">𓅭</span>
+  <span class="bird bird-3">𓅭</span>
+</div>
+
+<!-- ============================= -->
+<!-- FLOATING MUSIC PLAYER         -->
+<!-- ============================= -->
+<div class="music-box" id="music-box">
+  <button id="music-toggle" class="music-toggle" aria-label="Play or pause music">
+    <span class="music-icon note">♪</span>
+  </button>
+  <div class="music-info">
+    <p class="music-title">A Princess Theme</p>
+    <p class="music-status" id="music-status">Now Playing</p>
+  </div>
+  <div class="music-bars"><span></span><span></span><span></span><span></span></div>
+</div>
+<!-- THAY NHẠC VÀO ĐÂY: đổi đường dẫn src bên dưới thành file nhạc của bạn (mp3), nên chọn nhạc nhẹ nhàng kiểu dàn dây/hộp nhạc như OST Sofia the First -->
+<audio id="bgm" loop preload="auto">
+  <source src="assets/music/bgm.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ============================= -->
+<!-- NAVIGATION                    -->
+<!-- ============================= -->
+<header class="site-header" id="site-header">
+  <a href="#home" class="logo">
+    <span class="logo-monogram">MH</span>
+    <span class="logo-text">MINH HẰNG<br><small>KINGDOM</small></span>
+  </a>
+
+  <nav class="nav-desktop">
+    <a href="#home" class="nav-link active" data-nav>Kingdom</a>
+    <a href="#about" class="nav-link" data-nav>About Me</a>
+    <a href="#experience" class="nav-link" data-nav>Experience</a>
+    <a href="#projects" class="nav-link" data-nav>Projects</a>
+    <a href="#contact" class="nav-link" data-nav>Royal Letter</a>
+  </nav>
+
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="nav-mobile" id="nav-mobile">
+  <a href="#home" data-nav>👑 Kingdom</a>
+  <a href="#about" data-nav>📖 About Me</a>
+  <a href="#experience" data-nav>🗝️ Experience</a>
+  <a href="#projects" data-nav>✨ Projects</a>
+  <a href="#contact" data-nav>💌 Royal Letter</a>
+</nav>
+
+<!-- ============================= -->
+<!-- HOME                          -->
+<!-- ============================= -->
+<main>
+<section id="home" class="section hero-section">
+  <!-- THAY ẢNH CỦA BẠN VÀO ĐÂY: ảnh lâu đài fantasy tím làm nền cho toàn trang -->
+  <div class="castle-bg" style="background-image:url('assets/images/castle-bg.jpg');"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <div class="hero-portrait-wrap" data-reveal>
+      <div class="royal-frame">
+        <!-- THAY ẢNH CỦA BẠN VÀO ĐÂY: ảnh chân dung chính -->
+        <img src="assets/images/portrait-main.jpg" alt="Đoàn Thị Minh Hằng" class="hero-portrait">
+      </div>
+      <span class="frame-ribbon">Welcome to my kingdom</span>
+    </div>
+
+    <div class="hero-text" data-reveal>
+      <p class="eyebrow">✦ Welcome to ✦</p>
+      <h1 class="hero-title">The Kingdom<br>of <span>Minh Hằng</span></h1>
+      <p class="hero-subtitle">A dreamer who believes in quiet observation, honest creativity, and stories told her own way.</p>
+      <a href="#about" class="royal-btn">Explore My Story <span>➜</span></a>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span></span>
+    <p>Scroll to explore</p>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- ABOUT ME                      -->
+<!-- ============================= -->
+<section id="about" class="section about-section">
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">✦ Chapter I ✦</p>
+    <h2>About Me</h2>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-portrait" data-reveal>
+      <div class="royal-frame small">
+        <!-- THAY ẢNH CỦA BẠN VÀO ĐÂY: ảnh giới thiệu bản thân -->
+        <img src="assets/images/portrait-about.jpg" alt="Minh Hằng">
+      </div>
+    </div>
+
+    <div class="about-text" data-reveal>
+      <h3 class="scroll-name">Đoàn Thị Minh Hằng</h3>
+      <p>I'm a third-year International Business student at the Foreign Trade University, with a deep love for communications and storytelling. I've served as Vice Head of the Communications Board of the Student Union, and as MultiMedia Lead for TEDxFTUHanoi 2025 — where I got to build content and connect with so many bright young minds.</p>
+      <p>Emotionally, I lean introverted — I observe quietly, feel deeply, and choose to express myself through what I create. But that never makes me hesitant. I actively step out of my comfort zone, chase new challenges, and I'm never afraid to begin something I've never done before.</p>
+      <p>I believe creativity doesn't come from being the loudest in the room — it comes from truly understanding yourself and growing a little every day. That belief is the compass guiding me, step by step, toward shining in my own way.</p>
+
+      <div class="skill-columns">
+        <div class="skill-card">
+          <h4>Hard Skills</h4>
+          <ul>
+            <li>Content creation</li>
+            <li>Basic design (Canva, AI, Photoshop)</li>
+            <li>Video editing</li>
+            <li>Short & long-form video production (TikTok, Reels, YouTube)</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h4>Soft Skills</h4>
+          <ul>
+            <li>Communication & connection</li>
+            <li>Teamwork</li>
+            <li>Creative thinking</li>
+            <li>Proactive & responsible mindset</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h4>Languages</h4>
+          <ul>
+            <li>English</li>
+            <li>Chinese</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- EXPERIENCE                    -->
+<!-- ============================= -->
+<section id="experience" class="section experience-section">
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">✦ Chapter II ✦</p>
+    <h2>Experience & Achievements</h2>
+    <p class="section-sub">Quests completed across the kingdom of student life</p>
+  </div>
+
+  <div class="experience-grid">
+
+    <article class="experience-card" data-reveal>
+      <div class="exp-card-top">
+        <span class="exp-icon">👗</span>
+        <h3>Duyên Dáng Ngoại Thương — Beauty & Charm 2023</h3>
+      </div>
+      <p class="exp-role">Design Team</p>
+      <p>Designed the timeline post series and offline printed materials for the show, keeping engagement high and information flowing to the audience throughout the competition.</p>
+      <div class="exp-links">
+        <!-- THAY LINK FANPAGE/TIKTOK CỦA BẠN VÀO ĐÂY -->
+        <a href="#" target="_blank" rel="noopener" class="exp-link">Fanpage ↗</a>
+        <a href="#" target="_blank" rel="noopener" class="exp-link">TikTok ↗</a>
+      </div>
+      <p class="exp-result"><strong>Result:</strong> Videos reached 10K–120K+ views each, boosting audience interest and holding attention through to the final night of the competition.</p>
+    </article>
+
+    <article class="experience-card" data-reveal>
+      <div class="exp-card-top">
+        <span class="exp-icon">🎤</span>
+        <h3>TEDxFTUHanoi 2025</h3>
+      </div>
+      <p class="exp-role">Lead, MultiMedia</p>
+      <p>Built the communications strategy — especially for TikTok, plus Threads — and coordinated collaborators to execute the content plan and evaluate results.</p>
+      <div class="exp-links">
+        <!-- THAY LINK FANPAGE CỦA BẠN VÀO ĐÂY -->
+        <a href="#" target="_blank" rel="noopener" class="exp-link">TikTok ↗</a>
+        <a href="#" target="_blank" rel="noopener" class="exp-link">Threads ↗</a>
+      </div>
+      <p class="exp-result"><strong>Result:</strong> The 2024 TikTok channel reached 982 followers & 6,399 likes. After 3 months running the 2025 campaign, it grew to 3,192 followers & 21.4K likes, with several videos trending and sparking wide discussion.</p>
+    </article>
+
+    <article class="experience-card" data-reveal>
+      <div class="exp-card-top">
+        <span class="exp-icon">🌟</span>
+        <h3>Sinh Viên 5 Tốt — FTU Chapter</h3>
+      </div>
+      <p class="exp-role">Sub Lead, Communications · Design</p>
+      <p>Designed the visual identity for a newly launched fanpage and created its first core posts, laying the foundation for the page. It grew to nearly 7K followers by 2025, alongside rising attention for the "Five Good Student" movement.</p>
+      <div class="exp-links">
+        <!-- THAY LINK FANPAGE CỦA BẠN VÀO ĐÂY -->
+        <a href="#" target="_blank" rel="noopener" class="exp-link">Fanpage ↗</a>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="achievements-block" data-reveal>
+    <h3 class="achievements-title">Royal Honors 🏅</h3>
+    <div class="achievements-grid">
+      <div class="ach-card">
+        <h4>Academic</h4>
+        <ul>
+          <li>GPA: 3.74</li>
+          <li>2nd Prize — Calculus, University Math Olympiad 2023–2024</li>
+          <li>3rd Prize — Algebra, University Math Olympiad 2023–2024</li>
+          <li>Co-author, "Factors Influencing Reshoring Decisions of Manufacturing Enterprises: A Study in Vietnam," published in Journal of Economics & Management (ISSN 1859-4565)</li>
+          <li>2nd Prize, Freshman Documentary Competition 2023</li>
+          <li>Lotte Corporate Scholarship</li>
+          <li>SCG Corporate Scholarship, 2024 & 2025</li>
+          <li>Type A Academic Encouragement Scholarship, Semester 2023–2024</li>
+        </ul>
+      </div>
+      <div class="ach-card">
+        <h4>Research & Community</h4>
+        <ul>
+          <li>University-level research participant on manufacturing reshoring in Vietnam</li>
+          <li>Top 5, Community Project — "Heat-Insulating Panels from Durian Husk"</li>
+          <li>Top 5, CE Hackathon 2024 — Circular Economy Idea Competition</li>
+          <li>Five Good Student — University level, 2023–2024 & 2024–2025</li>
+          <li>Five Good Student — City level, 2024–2025</li>
+        </ul>
+      </div>
+      <div class="ach-card">
+        <h4>Volunteering</h4>
+        <ul>
+          <li>Organizing Specialist, University-wide Blood Donation Day, FTU</li>
+          <li>Freshman Enrollment Support Staff, K63 New Students</li>
+          <li>Volunteer, Thai Nguyen Program — FSSC x KCCC (Vietnam–Korea Cultural Exchange Center)</li>
+          <li>Volunteer, "Tết Đong Đầy 2026" — Sum Vầy Bản Nhỏ Project</li>
+        </ul>
+      </div>
+      <div class="ach-card">
+        <h4>Student Union</h4>
+        <ul>
+          <li>"BFFer of the Month" — Outstanding Collaborator Award</li>
+          <li>"BFFer of the Core" — "Green Summer" Program</li>
+          <li>"BFFer of the Year" Award, FTU Student Union</li>
+          <li>Vice Head, Communications Board, FTU Student Union (2024–2025)</li>
+          <li>Certificates of Merit for outstanding contributions, 2023–2025</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- PROJECTS                      -->
+<!-- ============================= -->
+<section id="projects" class="section projects-section">
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">✦ Chapter III ✦</p>
+    <h2>Latest Projects</h2>
+    <p class="section-sub">Selected work from FTU Student Union programs & personal projects</p>
+  </div>
+
+  <div class="projects-grid">
+
+    <article class="project-card" data-reveal>
+      <div class="project-thumb">
+        <!-- THAY ẢNH DỰ ÁN CỦA BẠN VÀO ĐÂY -->
+        <img src="assets/images/project-beautycharm.jpg" alt="Beauty & Charm 2023">
+      </div>
+      <div class="project-body">
+        <h3>Beauty & Charm 2023</h3>
+        <p>Timeline design & offline print materials for Duyên Dáng Ngoại Thương, plus TikTok filming & editing.</p>
+        <!-- THAY LINK DỰ ÁN CỦA BẠN VÀO ĐÂY -->
+        <a href="#" target="_blank" rel="noopener" class="project-link">View Fanpage ↗</a>
+      </div>
+    </article>
+
+    <article class="project-card" data-reveal>
+      <div class="project-thumb">
+        <!-- THAY ẢNH DỰ ÁN CỦA BẠN VÀO ĐÂY -->
+        <img src="assets/images/project-tedx.jpg" alt="TEDxFTUHanoi 2025">
+      </div>
+      <div class="project-body">
+        <h3>TEDxFTUHanoi 2025</h3>
+        <p>Led multimedia strategy across TikTok & Threads, growing the channel to 3,192 followers and 21.4K likes.</p>
+        <a href="#" target="_blank" rel="noopener" class="project-link">View TikTok ↗</a>
+      </div>
+    </article>
+
+    <article class="project-card" data-reveal>
+      <div class="project-thumb">
+        <!-- THAY ẢNH DỰ ÁN CỦA BẠN VÀO ĐÂY -->
+        <img src="assets/images/project-5tot.jpg" alt="Sinh Viên 5 Tốt FTU">
+      </div>
+      <div class="project-body">
+        <h3>Sinh Viên 5 Tốt — FTU</h3>
+        <p>Built the fanpage's visual identity from the ground up, growing it to nearly 7K followers.</p>
+        <a href="#" target="_blank" rel="noopener" class="project-link">View Fanpage ↗</a>
+      </div>
+    </article>
+
+    <article class="project-card" data-reveal>
+      <div class="project-thumb">
+        <!-- THAY ẢNH DỰ ÁN CỦA BẠN VÀO ĐÂY -->
+        <img src="assets/images/project-sacviet.jpg" alt="Sắc - Chạm Màu Việt">
+      </div>
+      <div class="project-body">
+        <h3>Sắc — Chạm Màu Việt</h3>
+        <p>A personal creative project celebrating Vietnamese color and culture through visual storytelling.</p>
+        <a href="#" target="_blank" rel="noopener" class="project-link">View Project ↗</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- CONTACT                       -->
+<!-- ============================= -->
+<section id="contact" class="section contact-section">
+  <div class="contact-scroll" data-reveal>
+    <div class="contact-portrait">
+      <div class="royal-frame small">
+        <!-- THAY ẢNH CỦA BẠN VÀO ĐÂY -->
+        <img src="assets/images/portrait-contact.jpg" alt="Đoàn Thị Minh Hằng">
+      </div>
+    </div>
+
+    <div class="contact-content">
+      <p class="eyebrow">✦ Final Chapter ✦</p>
+      <h2>A Letter to You</h2>
+      <p class="contact-quote">"Every story has the power to change the world."</p>
+      <p>Thank you for reading through my kingdom. If you'd like to collaborate, chat, or simply say hello, my royal mailbox is always open.</p>
+
+      <div class="contact-info">
+        <p>✉️ minhhang123.hd@gmail.com</p>
+        <p>📞 0389 191 122</p>
+      </div>
+
+      <div class="social-icons">
+        <!-- THAY LINK MẠNG XÃ HỘI CỦA BẠN VÀO ĐÂY -->
+        <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">in</a>
+        <a href="#" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon">◎</a>
+        <a href="mailto:minhhang123.hd@gmail.com" aria-label="Email" class="social-icon">✉</a>
+        <a href="#" target="_blank" rel="noopener" aria-label="TikTok" class="social-icon">♪</a>
+      </div>
+
+      <!-- THAY LINK FILE CV CỦA BẠN VÀO ĐÂY -->
+      <a href="assets/cv/CV_Doan_Thi_Minh_Hang.pdf" download class="royal-btn cv-btn">Download My CV <span>⬇</span></a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>✦ Made with love, ink, and a little bit of fairy dust — Đoàn Thị Minh Hằng © 2026 ✦</p>
+  </footer>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
