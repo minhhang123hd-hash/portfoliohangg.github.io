@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     startMusic();
     setTimeout(() => {
       bookIntro.classList.add('hidden');
-    }, 1500);
+    }, 3000);
   }
 
   book.addEventListener('click', openBook);
