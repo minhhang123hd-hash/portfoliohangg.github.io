@@ -283,10 +283,10 @@ ul{ list-style:none; }
 .royal-frame{
   position:relative;
 
-  width:min(420px,78vw);
+  width:min(300px,65vw);
   aspect-ratio:3/4;
 
-  padding:24px;
+  padding:14px;
 
   background:linear-gradient(
     180deg,
@@ -314,8 +314,8 @@ ul{ list-style:none; }
   object-fit:cover;
 
   border-radius:
-    100px 100px
-    50px 50px;
+    70px 70px
+    35px 35px;
 
   border:5px solid rgba(255,255,255,.7);
 }
@@ -324,10 +324,10 @@ ul{ list-style:none; }
 
   position:absolute;
 
-  width:70px;
-  height:70px;
+  width:38px;
+  height:38px;
 
-  top:-18px;
+  top:-10px;
   left:50%;
 
   transform:
@@ -354,12 +354,12 @@ ul{ list-style:none; }
 
   position:absolute;
 
-  top:-70px;
+  top:-45px;
   left:50%;
 
   transform:translateX(-50%);
 
-  font-size:58px;
+  font-size:36px;
 
   filter:
     drop-shadow(0 0 15px rgba(255,223,119,.9));
@@ -369,15 +369,33 @@ ul{ list-style:none; }
 .royal-frame.small{ width: min(260px, 60vw); }
 
 .frame-ribbon{
-  display:block; text-align:center; margin: 1.2rem auto 0; max-width: 260px;
-  font-family: var(--font-script); font-size:1.4rem; color: var(--gold-soft);
+  display:block;
+  text-align:center;
+
+  margin:0.8rem auto 0;
+  max-width:220px;
+
+  font-family: var(--font-script);
+  font-size:1rem;
+
+  color:#fff6d8;
+
   background:linear-gradient(
-  135deg,
-  #c89fff,
-  #e6b8ff
-);
-  border: 2px solid #ffe9f8;
-  padding: 0 8px 20px rgba(200,159,255,.35);
+    135deg,
+    #d6afff,
+    #c89fff
+  );
+
+  border:2px solid #ffe9f8;
+
+  padding:10px 20px;
+
+  border-radius:12px;
+
+  box-shadow:
+    0 8px 20px rgba(200,159,255,.35);
+
+  backdrop-filter:blur(6px);
 }
 
 /* ============ HOME / HERO ============ */
