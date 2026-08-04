@@ -86,10 +86,51 @@ ul{ list-style:none; }
 
 /* ============ Storybook Intro ============ */
 .book-intro{
-  position: fixed; inset:0; z-index: 999;
-  display:flex; align-items:center; justify-content:center;
-  background: radial-gradient(ellipse at center, var(--purple-dark) 0%, var(--purple-deepest) 75%);
-  transition: opacity 1s ease, visibility 1s ease;
+  position:fixed;
+  inset:0;
+  z-index:999;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+}
+.intro-video{
+  position:absolute;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  z-index:0;
+}
+
+.intro-overlay{
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+    rgba(44,21,71,.45),
+    rgba(44,21,71,.70)
+  );
+
+  z-index:1;
+}
+
+.intro-stars{
+  z-index:2;
+}
+
+.book{
+  z-index:5;
+}
+
+.skip-intro{
+  z-index:6;
 }
 .book-intro.hidden{ opacity:0; visibility:hidden; pointer-events:none; }
 
@@ -683,4 +724,40 @@ body::before{
     transform:translateY(-40px) scale(1);
     opacity:0;
   }
+}
+/* =========================
+   INTRO VIDEO BACKGROUND
+========================= */
+
+.intro-video{
+  position:absolute;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  z-index:0;
+}
+
+.intro-overlay{
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      rgba(44,21,71,.55),
+      rgba(44,21,71,.75)
+    );
+
+  z-index:1;
+}
+
+.book{
+  z-index:5;
+}
+
+.skip-intro{
+  z-index:6;
 }
