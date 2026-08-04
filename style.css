@@ -342,37 +342,39 @@ ul{ list-style:none; }
 .skill-card li::before{ content:"✦ "; color: var(--gold-soft); }
 
 /* ============ EXPERIENCE ============ */
-.experience-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:1.8rem; margin-bottom: 4rem; }
+.experience-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:1.8rem; margin-bottom: 4rem; }
 .experience-card{
   background: linear-gradient(160deg, rgba(124,63,174,0.25), rgba(44,21,71,0.4));
   border: 1px solid rgba(232,200,116,0.3); border-radius: 20px;
-  padding: 1.8rem; position:relative;
+  overflow:hidden; position:relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .experience-card:hover{ transform: translateY(-6px); box-shadow: 0 20px 40px var(--shadow-purple); }
-.exp-card-top{ display:flex; align-items:center; gap:0.7rem; margin-bottom:0.6rem; }
-.exp-icon{ font-size:1.6rem; }
-.experience-card h3{ font-family: var(--font-heading); font-size:1.05rem; color: var(--cream); line-height:1.3; }
-.exp-role{ font-size:0.8rem; color: var(--gold-soft); text-transform:uppercase; letter-spacing:1px; margin-bottom:0.8rem; }
-.experience-card p{ font-size:0.9rem; line-height:1.6; color: var(--purple-pale); margin-bottom:0.8rem; }
-.exp-links{ display:flex; gap:0.8rem; margin-bottom:0.8rem; flex-wrap:wrap; }
+.exp-thumb{ aspect-ratio: 16/10; background: linear-gradient(135deg, var(--purple-royal), var(--purple-mid)); overflow:hidden; }
+.exp-thumb img{ width:100%; height:100%; object-fit:cover; }
+.exp-body{ padding: 1.4rem 1.6rem 1.6rem; }
+.experience-card h3{ font-family: var(--font-heading); font-size:1.05rem; color: var(--cream); line-height:1.35; }
+.exp-role{ font-size:0.78rem; color: var(--gold-soft); text-transform:uppercase; letter-spacing:1px; margin: 0.5rem 0 1rem; }
+.exp-links{ display:flex; gap:0.8rem; flex-wrap:wrap; }
 .exp-link{
   font-size:0.8rem; padding:0.35rem 0.9rem; border-radius:999px;
   border: 1px solid var(--gold-soft); color: var(--gold-soft);
   transition: all 0.3s ease;
 }
 .exp-link:hover{ background: var(--gold-soft); color: var(--purple-deepest); }
-.exp-result{ font-size:0.85rem; color: var(--purple-light); }
 
 .achievements-title{ font-family: var(--font-display); text-align:center; font-size:1.5rem; color: var(--gold); margin-bottom:2rem; }
-.achievements-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:1.5rem; }
+.achievements-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap:1.5rem; }
 .ach-card{
   background: rgba(253,246,236,0.05); border: 1px solid rgba(232,200,116,0.25);
-  border-radius: 16px; padding: 1.4rem;
+  border-radius: 16px; overflow:hidden;
 }
-.ach-card h4{ font-family: var(--font-heading); color: var(--gold-soft); margin-bottom:0.7rem; }
-.ach-card li{ font-size:0.82rem; line-height:1.6; color: var(--purple-pale); padding: 0.2rem 0; padding-left: 1rem; position:relative; }
-.ach-card li::before{ content:"❈"; position:absolute; left:0; color: var(--gold-soft); font-size:0.7rem; top:0.4rem; }
+.ach-thumb{ aspect-ratio: 4/3; background: linear-gradient(135deg, var(--purple-royal), var(--purple-mid)); overflow:hidden; }
+.ach-thumb img{ width:100%; height:100%; object-fit:cover; }
+.ach-card h4{ font-family: var(--font-heading); color: var(--gold-soft); margin: 1rem 1.2rem 0.6rem; font-size:0.95rem; }
+.ach-tags{ padding: 0 1.2rem 1.2rem; }
+.ach-tags li{ font-size:0.8rem; line-height:1.6; color: var(--purple-pale); padding: 0.15rem 0; padding-left: 1rem; position:relative; }
+.ach-tags li::before{ content:"❈"; position:absolute; left:0; color: var(--gold-soft); font-size:0.65rem; top:0.4rem; }
 
 /* ============ PROJECTS ============ */
 .projects-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:2rem; }
